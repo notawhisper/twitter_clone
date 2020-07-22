@@ -1,6 +1,6 @@
 <h1>DokuGo</h1>
 
-<%= form_with(model: @word, local: true) do |form| %>
+<%= form_with(model: @word, local: true, url: confirm_words_path) do |form| %>
   <div class="word_content">
     <%= form.label :content, "考えていること" %>
     <br>

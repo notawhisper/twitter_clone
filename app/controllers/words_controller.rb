@@ -9,7 +9,16 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    @word.save
+    if params[:back]
+      render :new
+    else
+      @word.save
+      redirect_to words_path
+    end
+  end
+
+  def confirm
+    @word = Word.new(word_params)
   end
 
   private
