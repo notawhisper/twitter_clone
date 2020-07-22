@@ -1,0 +1,13 @@
+<h3>溜まり場</h3>
+<br>
+<table>
+  <% @words.each do |word| %>
+    <tr>
+      <td><%= word.created_at %></td>
+    </tr>
+
+    <tr>
+      <td><%= word.content %></td>
+    </tr>
+  <% end %>
+</table>
