@@ -13,6 +13,13 @@
     <tr>
       <td><%= link_to '言い直す', edit_word_path(word.id) %></td>
     </tr>
+
+    <tr>
+      <td>
+        <%= link_to 'ひとりごとを取り消す', word_path(word.id),
+         method: :delete ,data: { confirm: '本当に取り消しますか？' } %>
+      </td>
+    </tr>
   <% end %>
 </table>
 
