@@ -9,6 +9,10 @@
     <tr>
       <td><%= word.content %></td>
     </tr>
+
+    <tr>
+      <td><%= link_to '言い直す', edit_word_path(word.id) %></td>
+    </tr>
   <% end %>
 </table>
 

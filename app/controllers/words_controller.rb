@@ -21,6 +21,16 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
   end
 
+  def edit
+    @word = Word.find(params[:id])
+  end
+
+  def update
+    @word = Word.find(params[:id])
+    @word.update(word_params)
+    redirect_to words_path
+  end
+
   private
   def word_params
     params.require(:word).permit(:content)
