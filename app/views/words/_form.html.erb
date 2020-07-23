@@ -1,0 +1,9 @@
+<%= form_with(model: @word, local: true, url: choose_new_or_edit) do |form| %>
+  <div class="word_content">
+    <%= form.label :content, "考えていること" %>
+    <br>
+    <%= form.text_field :content %>
+  </div>
+  <br>
+  <%= form.submit "ひとりごちる" %>
+<% end %>

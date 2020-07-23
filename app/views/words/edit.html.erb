@@ -1,13 +1,5 @@
 <h1>言い直す</h1>
 
-<%= form_with(model: @word, local: true, url: word_path) do |form| %>
-  <div class="word_content">
-    <%= form.label :content, "考えていること" %>
-    <br>
-    <%= form.text_field :content %>
-  </div>
-  <br>
-  <%= form.submit "ひとりごちる" %>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to '戻る', words_path %>

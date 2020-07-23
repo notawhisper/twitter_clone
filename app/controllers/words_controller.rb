@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action :set_word, only: [:update, :edit, :destroy]
   def index
     @words = Word.all
   end
@@ -22,17 +23,14 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = Word.find(params[:id])
   end
 
   def update
-    @word = Word.find(params[:id])
     @word.update(word_params)
     redirect_to words_path
   end
 
   def destroy
-    @word = Word.find(params[:id])
     @word.destroy
     redirect_to words_path
   end
@@ -40,5 +38,9 @@ class WordsController < ApplicationController
   private
   def word_params
     params.require(:word).permit(:content)
+  end
+
+  def set_word
+    @word = Word.find(params[:id])
   end
 end
