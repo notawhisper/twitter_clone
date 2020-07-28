@@ -10,11 +10,15 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
+
     if params[:back]
       render :new
     else
-      @word.save
-      redirect_to words_path
+      if @word.save
+        redirect_to words_path, notice: 'ひとりごちました'
+      else
+        render :new
+      end
     end
   end
 
@@ -26,13 +30,16 @@ class WordsController < ApplicationController
   end
 
   def update
-    @word.update(word_params)
-    redirect_to words_path
+    if @word.update(word_params)
+      redirect_to words_path, notice: '言い直しました'
+    else
+      render :new
+    end
   end
 
   def destroy
     @word.destroy
-    redirect_to words_path
+    redirect_to words_path, notice: 'ひとりごとをなかったことにしました'
   end
 
   private
