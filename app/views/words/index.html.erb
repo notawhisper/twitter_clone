@@ -1,0 +1,26 @@
+<h3>溜まり場</h3>
+<h4><%= notice %></h4>
+<table>
+  <% @words.each do |word| %>
+    <tr>
+      <td><%= word.created_at %></td>
+    </tr>
+
+    <tr>
+      <td><%= word.content %></td>
+    </tr>
+
+    <tr>
+      <td><%= link_to '言い直す', edit_word_path(word.id) %></td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= link_to 'ひとりごとを取り消す', word_path(word.id),
+         method: :delete ,data: { confirm: '本当に取り消しますか？' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'ひとりごちる', new_word_path %>
