@@ -1,7 +1,7 @@
 
 <%= form_with(model: @word, local: true, url: choose_new_or_edit) do |form| %>
   <% if @word.errors.any? %>
-    <div id="error_explanation">
+    <div class="text-center" id="error_explanation">
       <h2><%= @word.errors.count %>件のエラーがあります。</h2>
       <ul>
       <% @word.errors.full_messages.each do |msg| %>
