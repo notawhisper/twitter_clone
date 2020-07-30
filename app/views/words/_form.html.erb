@@ -1,5 +1,16 @@
 
 <%= form_with(model: @word, local: true, url: choose_new_or_edit) do |form| %>
+  <% if @word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @word.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-contents">
     <div class="my-word">
       <h3 class="page-title"><%= form.label :content, "考えていること" %></h3>
