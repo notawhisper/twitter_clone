@@ -1,12 +1,7 @@
 <%= form_with(model: @word, local: true, url: choose_new_or_edit) do |form| %>
   <% if @word.errors.any? %>
-    <div class="text-center" id="error_explanation">
-      <h2><%= @word.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @word.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div id="error_explanation">
+      <h2 class="text-center" >ひとりごとは1〜140文字に収めてください</h2>
     </div>
   <% end %>
 
