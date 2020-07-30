@@ -10,6 +10,7 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
+
     if params[:back]
       render :new
     else
@@ -38,7 +39,7 @@ class WordsController < ApplicationController
 
   def destroy
     @word.destroy
-    redirect_to words_path
+    redirect_to words_path, notice: 'ひとりごとをなかったことにしました'
   end
 
   private
