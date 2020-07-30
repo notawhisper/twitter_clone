@@ -1,12 +1,14 @@
 
 <%= form_with(model: @word, local: true, url: choose_new_or_edit) do |form| %>
-  <div class="form-contents row">
-    <div class="word_content">
-      <%= form.label :content, "考えていること" %>
+  <div class="form-contents">
+    <div class="my-word">
+      <h3 class="page-title"><%= form.label :content, "考えていること" %></h3>
       <br>
-      <%= form.text_field :content %>
+      <%= form.text_area :content, size: "30x5" %>
     </div>
+
     <br>
-    <%= form.submit "ひとりごちる" %>
+
+    <p><%= form.submit "ひとりごちる", class: "buttons" %></p>
   </div>
 <% end %>

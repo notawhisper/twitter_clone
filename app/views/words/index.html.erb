@@ -1,30 +1,36 @@
 
 <div class="row">
-  <h3 class="col-md-3 mx-auto text-center">溜まり場</h3>
+  <h4 class="page-title col-md-3 mx-auto text-center">溜まり場</h4>
 </div>
 <br>
 
-<div class="table-wrapper">
-  <table class="" id="">
+<!-- <div class="table-wrapper"> -->
+  <table class="word-table">
     <% @words.each do |word| %>
         <tr>
-          <td><%= word.created_at %></td>
+          <td class="bg-light"><%= word.created_at %></td>
         </tr>
 
         <tr>
-          <td><%= word.content %></td>
-        </tr>
-
-        <tr>
-          <td><%= link_to '言い直す', edit_word_path(word.id) %></td>
+          <td><p class="word-content"><%= word.content %></p></td>
         </tr>
 
         <tr>
           <td>
-            <%= link_to 'ひとりごとを取り消す', word_path(word.id),
+            <p class="btn btn-light btn-sm">
+              <%= link_to '言い直す', edit_word_path(word.id) %>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p class="btn btn-light btn-sm">
+              <%= link_to '取り消す', word_path(word.id),
              method: :delete ,data: { confirm: '本当に取り消しますか？' } %>
+            </p>
           </td>
         </tr>
     <% end %>
   </table>
-</div>
+<!-- </div> -->
