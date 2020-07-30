@@ -74,7 +74,6 @@ table td {
 
 .word-content {
   max-width: 100%;
-  // background-color: red;
   padding: 0.5rem;
 }
 
@@ -82,15 +81,6 @@ table td {
   width: 50%;
   margin: 0 auto;
   text-align: center;
-}
-
-footer {
-  margin-top: 0;
-}
-
-footer nav a {
-  margin: 0 auto;
-  color: gray;
 }
 
 .page-title {
@@ -109,4 +99,13 @@ footer nav a {
 
 #error_explanation {
   color: rgb(228, 97, 164);
+}
+
+footer {
+  margin-top: 0;
+}
+
+footer nav a {
+  margin: 0 auto;
+  color: gray;
 }
