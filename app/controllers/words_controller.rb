@@ -15,7 +15,7 @@ class WordsController < ApplicationController
       render :new
     else
       if @word.save
-        redirect_to words_path, notice: 'ひとりごちました'
+        redirect_to words_path
       else
         render :new
       end
@@ -30,12 +30,12 @@ class WordsController < ApplicationController
   end
 
   def update
-    if @word.update(word_params)
-      redirect_to words_path, notice: '言い直しました'
-    else
-      render :new
-    end
-  end
+     if @word.update(word_params)
+       redirect_to words_path
+     else
+       render :new
+     end
+   end
 
   def destroy
     @word.destroy

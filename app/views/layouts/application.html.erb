@@ -4,12 +4,35 @@
     <title>Dokugo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <header class="fixed-top bg-light">
+        <ul class="navbar-nav">
+          <li class="nav-item" id="logo">
+            <h2>DokuGo</h2>
+          </li>
+
+          <div class="links">
+            <li class="nav-item btn"><%= link_to '過去の独り言', words_path %></li>
+            <li class="nav-item btn"><%= link_to 'ひとりごちる', new_word_path %></li>
+          </div>
+        </ul>
+      </header>
+
+      <div class="yield-wrapper">
+        <%= yield %>
+      </div>
+
+      <footer>
+        <nav class="navbar navbar-expand-md bg-light fixed-bottom">
+          <a href="#"><h3>DokuGo</h3></a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>

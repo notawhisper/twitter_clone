@@ -1,6 +1,7 @@
-<h1>この内容でひとりごちる？</h1>
+<h4 class="page-title text-center">内容の確認</h4>
 
 <%= form_with(model: @word, local: true, url: words_path) do |form| %>
+<div class="confirm-contents text-center">
   <div class="word_content">
     <%= form.hidden_field :content %>
   </div>
@@ -9,8 +10,9 @@
     <%= @word.content %>
   </div>
   <br>
-  <%= form.submit "ひとりごちる" %>
+  <%= form.submit "ひとりごちる", class: "buttons" %>
   <br>
-  <%= form.submit '戻る', name: 'back' %>
+  <%= form.submit '戻る', name: 'back', class: "buttons" %>
   <br>
+</div>
 <% end %>
